@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Pelicula</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <img src="assets/Img/logo2.png" alt="Movie Catalog Logo" class="img-fluid">
+                <ul class="nav justify-content-end">
+                  <li class="nav-item">
+                    <a class="nav-link active" href=" ">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="list-movies">Ver Catálogo</a>
+                  </li>                  
+              </ul>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <h4>Vista: Agregar Película</h4>
+            </div>
+        </div>
+        <!-- Botones -->
+        <a href="list-movies" class="btn btn-warning">Regresar</a>
+        <br><br><br><br>
+      
+        <!-- Form para Enviar Datos Pelicula -->
+        <form>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Titulo Película</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [formControl]="title" name="title" placeholder="Escriba el título">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Año</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [formControl]="year" name="year" placeholder="Año de la película">
+              </div>
+            </div>
+            <div class="form-group row">
+                <label for="exampleFormControlTextarea1"  class="col-sm-2 col-form-label">Sínopsis</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" [formControl]="synopsis" name="synopsis" rows="2"></textarea>
+                </div>               
+            </div>
+            <div class="form-group row" >
+                <label class="col-sm-2 col-form-label"  for="imagen">Cargar Imagen</label>
+                <div class="col-sm-10">
+                    <input type="file" class="custom-file-input" [formControl]="cover" name="cover" id="validatedCustomFile" required>
+                       <!-- Falta indicar que estamos tomando un archivo y no solo texto -->
+                    <label class="custom-file-label" for="validatedCustomFile"></label>
+                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                </div>
+              </div>
+
+<br><br>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="button"  (click)="addMovie()" class="btn btn-success">Guardar</button>
+              </div>
+            </div>
+          </form>
+          <br>
+         
+       
+        
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <footer>
+                <p>&copy; Conceptualización de entornos de desarrollo de aplicaciones y servicios <br>Alumno: Yesica Villalvazo <br>yesica.villalvazoudgvirtual.udg.mx</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Link to Bootstrap JS and jQuery -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+
+/*  */
+body {
+    background-image: url('/assets/Img/cine.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    color: white;
+}
+.nav-link {
+    color: white;
+}
+.footer {
+    position:static;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 300px;
+}
+
+/* Custom CSS for the table */
+.movie-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.movie-table th, .movie-table td {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.movie-table th {
+    background-color: gray;
+    color: black;
+}
+
+.movie-table tr:nth-child(even) {
+    background-color: white;
+    color: black;
+}
+.movie-table td{
+   color: black;
+
+}
+
+.movie-table tr:nth-child(odd) {
+    background-color: white;
+    color: black;
+}

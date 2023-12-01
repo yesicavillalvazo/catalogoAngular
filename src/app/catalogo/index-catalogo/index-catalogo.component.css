@@ -1,0 +1,23 @@
+body {
+    background-image: url('/assets/Img/home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    color: white;
+}
+.nav-link {
+    color: white;
+}
+
+#intro {
+    opacity: 82%;
+}
+.footer {
+    position:static;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 300px;
+}
+

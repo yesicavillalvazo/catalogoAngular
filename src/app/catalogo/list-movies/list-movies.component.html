@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de peliculas</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <img src="assets/Img/logo_tmc.png" alt="Movie Catalog Logo" class="img-fluid">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                      <a class="nav-link active" href=" ">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="list-movies">Ver Catálogo</a>
+                    </li>                  
+                </ul>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <h4>Vista: Catálogo de Películas</h4>
+                 <br>
+                <a href="add-movie" class="btn btn-primary">Agregar Película</a>
+            </div>
+        </div>
+
+        <!-- Movie Table -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <table class="movie-table">
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Image</th>
+                        <th>Año</th>
+                        <th>Sinopsis</th>
+                    </tr> <!-- permite iterar  -->
+                    <tr *ngFor="let movie of movies">
+                        <td >{{movie.title}}</td>
+                        <td>{{movie.cover}}</td>
+                        <td>{{movie.year}}</td>
+                        <td>{{movie.synopsis}}</td>
+                    </tr>                  
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <footer>
+                <p>&copy; Conceptualización de entornos de desarrollo de aplicaciones y servicios <br>Alumno: Yesica Villalvazo <br>yesica.villalvazoudgvirtual.udg.mx</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Link to Bootstrap JS and jQuery -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

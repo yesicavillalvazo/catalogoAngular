@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'list-movies', component: ListMoviesComponent},
   {path: 'view-movie', component: ViewMovieComponent },
   {path: 'add-movie', component: AddMovieComponent},
+  {path: 'add-movie/:id', component: AddMovieComponent}, //le pasamos el parametro de id
 ]
 
 @NgModule({

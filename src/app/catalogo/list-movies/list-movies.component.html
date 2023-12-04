@@ -38,16 +38,22 @@
             <div class="col-12">
                 <table class="movie-table">
                     <tr>
+                        <th>ID</th>
                         <th>Titulo</th>
                         <th>Image</th>
                         <th>Año</th>
                         <th>Sinopsis</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </tr> <!-- permite iterar  -->
                     <tr *ngFor="let movie of movies">
-                        <td >{{movie.title}}</td>
+                        <td>{{movie.id}}</td>
+                        <td> <!-- <a [routerLink]="['/view-movie', movie.id]" -->  {{movie.title}}</td>
                         <td>{{movie.cover}}</td>
                         <td>{{movie.year}}</td>
                         <td>{{movie.synopsis}}</td>
+                        <td>  <button  type="button" class="btn btn-success" [routerLink]="['/add-movie',movie.id]" >Editar</button> </td>
+                        <td> <button (click)="deleteMovie(movie.id)" type="button"  class="btn btn-danger">Eliminar</button> </td>
                     </tr>                  
                 </table>
             </div>

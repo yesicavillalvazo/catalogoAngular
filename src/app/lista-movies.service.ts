@@ -3,11 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Movie {
+  id: string;
   title: string;
   cover: string;
   year: number;
   synopsis: string;
 
+  //Definir movies array?
 }
 
 @Injectable({
@@ -24,5 +26,10 @@ export class ListaMoviesService {
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.apiUrl);
   }
+  
+  deleteMovie(id: string | undefined): Observable<any>{
+    return this.http.delete(this.apiUrl+'/'+id);
+  }
+
 
 }

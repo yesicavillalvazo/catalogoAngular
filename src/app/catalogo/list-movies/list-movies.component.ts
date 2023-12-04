@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaMoviesService } from 'src/app/lista-movies.service';
-//maybe la src lo puedo quitar para que jale el path
 import { Movie } from 'src/app/lista-movies.service';
 
 @Component({
@@ -24,4 +23,19 @@ export class ListMoviesComponent implements OnInit {
       }
     );
   }
+  
+  deleteMovie(id: string | undefined): void {
+    this.listaMoviesService.deleteMovie(id).subscribe( response => {
+      console.log(response);
+      this.listaMoviesService.getMovies();
+      id = '';
+    });  confirm("Pelicula Eliminada");
+    window.location.reload();
+  }
+
+
+
+
+
+
 } 

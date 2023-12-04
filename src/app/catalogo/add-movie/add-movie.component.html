@@ -31,33 +31,40 @@
             </div>
         </div>
         <!-- Botones -->
+        <br>
         <a href="list-movies" class="btn btn-warning">Regresar</a>
-        <br><br><br><br>
+        <br><br><br>
       
         <!-- Form para Enviar Datos Pelicula -->
         <form>
+          <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">ID</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" [(ngModel)]="pelicula.id" [formControl]="id" name="id" placeholder="ID">
+            </div>
+          </div>
             <div class="form-group row">
               <label for="inputEmail3" class="col-sm-2 col-form-label">Titulo Película</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" [formControl]="title" name="title" placeholder="Escriba el título">
+                <input type="text" class="form-control" [(ngModel)]="pelicula.title" [formControl]="title" name="title" placeholder="Escriba el título">
               </div>
             </div>
             <div class="form-group row">
               <label for="inputPassword3" class="col-sm-2 col-form-label">Año</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" [formControl]="year" name="year" placeholder="Año de la película">
+                <input type="text" class="form-control" [(ngModel)]="pelicula.year" [formControl]="year" name="year" placeholder="Año de la película">
               </div>
             </div>
             <div class="form-group row">
                 <label for="exampleFormControlTextarea1"  class="col-sm-2 col-form-label">Sínopsis</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" [formControl]="synopsis" name="synopsis" rows="2"></textarea>
+                    <textarea class="form-control" [(ngModel)]="pelicula.synopsis" [formControl]="synopsis" name="synopsis" rows="2"></textarea>
                 </div>               
             </div>
             <div class="form-group row" >
                 <label class="col-sm-2 col-form-label"  for="imagen">Cargar Imagen</label>
                 <div class="col-sm-10">
-                    <input type="file" class="custom-file-input" [formControl]="cover" name="cover" id="validatedCustomFile" required>
+                    <input type="file" class="custom-file-input" [(ngModel)]="pelicula.cover" [formControl]="cover" name="cover" id="validatedCustomFile" required>
                        <!-- Falta indicar que estamos tomando un archivo y no solo texto -->
                     <label class="custom-file-label" for="validatedCustomFile"></label>
                     <div class="invalid-feedback">Example invalid custom file feedback</div>
@@ -67,7 +74,10 @@
 <br><br>
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="button"  (click)="addMovie()" class="btn btn-success">Guardar</button>
+                <button type="button"  (click)="addMovie()" style="margin: 15px;"  *ngIf="!pelicula.id else elseBlock" class="btn btn-success">Guardar</button>
+                <ng-template #elseBlock>
+                <button type="button"   style="margin: 15px;" class="btn btn-success">Actualizar</button>
+              </ng-template>
               </div>
             </div>
           </form>

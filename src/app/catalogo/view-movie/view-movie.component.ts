@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';  
 import { ViewMovieService } from 'src/app/view-movie.service';
-
-// aqui debo injectar el servicio de movies, para que me jale la peli por ID
-
 
 @Component({
   selector: 'app-view-movie',
@@ -12,7 +9,8 @@ import { ViewMovieService } from 'src/app/view-movie.service';
 })
 
 
-export class ViewMovieComponent {
+export class ViewMovieComponent  {
+  
 
- 
+
 }
